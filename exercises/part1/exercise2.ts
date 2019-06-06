@@ -1,11 +1,10 @@
 {
   // Extend Todo to support arbitrarily additional properties
   type Todo = {
-    title?: string
-    done?: boolean | string,
-    description?: string | number,
-    author?: string,
-    dueDate?: Date,
+    title: string
+    done: boolean,
+    description?: string,
+    [key:string]: any
   }
 
   // Ok:

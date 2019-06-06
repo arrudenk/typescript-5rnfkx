@@ -2,8 +2,10 @@
   // TIP: use generics!
   
   // Write the type for assign, replace the `any`s
-  function assign(object1: any, object2: any): any {
+
+  function assign<M, M2>(object1: M, object2: M2): M & M2{
     throw "Not implemented" // ignore this line
+    let test: M & M2;
   }
 
   {

@@ -7,28 +7,30 @@
    * 
    * Note: in this exercise it might be needed to slightly change implementation
    */
-  class MyCollection {
-    private data: any[]
 
-    constructor(initial: any) {
+  class MyCollection {
+    private data: number[]
+
+    constructor(initial?: any) {
       if (initial) this.data = Array.from(initial);
+      else this.data = new Array();
     }
 
-    get(index: number): unknown {
+    get(index: number): number | 0 {
       return this.data[index];
     }
 
-    add(value) {
+    add(value: number) {
       this.data.push(value);
     }
 
-    forEach(callback) {
+    forEach(callback: (value: number, index?: number) => void) {
       for (let i = 0; i < this.data.length; i++) {
         callback(this.data[i], i);
       }
     }
 
-    map<O>(callback: (item: T, index: number) => O): O[] {
+    map<O>(callback:(item: number, index: number) => O): O[] {
       return this.data.map(callback)
     }  
   }
@@ -47,11 +49,11 @@
     console.log(value)
   })
 
-  c2.forEach((value) => {
+  c2.forEach((value: number) => {
     let x: number = value
   })
 
-  const c3 = new MyCollection<number>()
+  const c3 = new MyCollection()
 
   const y: number = c3.get(0) * 2
 
