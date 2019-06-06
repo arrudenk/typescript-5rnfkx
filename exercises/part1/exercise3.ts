@@ -2,7 +2,7 @@
  * concatMessages currently accepts 0..n arguments.
  * Change the signature, so that it requires at least one argument!
  */
-function concatMessages(...messages: string[]) {
+function concatMessages(...messages: (number | string)[]) {
   return messages.join(", ");
 }
 
